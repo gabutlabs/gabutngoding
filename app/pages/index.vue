@@ -1,7 +1,7 @@
 <template>
   <div>
     <UPageHero
-      title="Selamat Data di Gabut Ngoding"
+      title="Selamat Datang di Gabut Ngoding"
       description="Gabut Ngoding merupakan sebuah website tempat saya menaruh semua hasil project gabut saya"
       :links="[
         {
@@ -34,10 +34,6 @@
           variant="subtle"
           :description="project.description"
           :title="project.project_name"
-          :ui="{
-            description:
-              'before:content-[open-quote] after:content-[close-quote]',
-          }"
         >
           <template #header>
             <img
