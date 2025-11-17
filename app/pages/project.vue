@@ -9,7 +9,8 @@ const { data: projects } = await useAsyncData("projects", () => {
 });
 
 const title = "Produk Saya";
-const description = "Jelajahi produk digital yang telah saya kembangkan di waktu luang saya.";
+const description =
+  "Jelajahi produk digital yang telah saya kembangkan di waktu luang saya.";
 </script>
 
 <template>

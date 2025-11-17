@@ -1,0 +1,6 @@
+{
+  "project_name": "Receipt Kuy",
+  "description": "Sistem generator untuk struk atau nota dan bisa dibagikan ke Whatsapp maupun didownload jadi PDF,dibuat dengan NuxtJs dan Sqlite",
+  "image": "/images/project/receipt-kuy.png",
+  "is_private": true
+}

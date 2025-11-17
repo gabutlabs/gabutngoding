@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // Beri ID unik untuk :key dan tambahkan 'url' untuk tombol demo/github
 const { data: projects } = await useAsyncData("projects", () => {
-  return queryCollection("projects").all();
+  return queryCollection("projects").limit(3).all();
 });
 </script>
 
@@ -31,8 +31,8 @@ const { data: projects } = await useAsyncData("projects", () => {
 
     <UPageSection
       id="features"
-      title="PROYEK"
-      description="Berikut ini adalah hasil proyek yang saya buat ketika senggang, belajar, atau gabut ingin membuat sesuatu"
+      title="PRODUK"
+      description="Berikut ini adalah hasil produk yang saya buat ketika senggang, belajar, atau gabut ingin membuat sesuatu"
     >
       <UPageColumns>
         <UPageCard
