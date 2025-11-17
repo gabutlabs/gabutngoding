@@ -4,7 +4,7 @@ definePageMeta({
   description: "Kumpulan produk digital saya",
 });
 
-const { data: projects } = await useAsyncData("projects", () => {
+const { data: projects } = await useAsyncData("all-projects", () => {
   return queryCollection("projects").all();
 });
 

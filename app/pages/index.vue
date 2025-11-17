@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // Beri ID unik untuk :key dan tambahkan 'url' untuk tombol demo/github
-const { data: projects } = await useAsyncData("projects", () => {
+const { data: projects, pending } = await useAsyncData("home-projects", () => {
   return queryCollection("projects").limit(3).all();
 });
 </script>
@@ -12,7 +12,7 @@ const { data: projects } = await useAsyncData("projects", () => {
       description="Gabut Ngoding merupakan sebuah website tempat saya menaruh semua hasil project gabut saya"
       :links="[
         {
-          label: 'Lihat Produk',
+          label: 'Lihat Semua Produk',
           to: '/project', // <-- OPTIMASI KONTEN: Link ke section project
           trailingIcon: 'i-lucide-arrow-right',
           size: 'xl',
@@ -31,35 +31,37 @@ const { data: projects } = await useAsyncData("projects", () => {
 
     <UPageSection
       id="features"
-      title="PRODUK"
+      title="PRODUK PILIHAN"
       description="Berikut ini adalah hasil produk yang saya buat ketika senggang, belajar, atau gabut ingin membuat sesuatu"
     >
       <UPageColumns>
-        <UPageCard
-          v-for="(project, index) in projects"
-          :key="index"
-          variant="subtle"
-          :description="project.description"
-          :title="project.project_name"
-        >
-          <template #header>
-            <img
-              :src="project.image"
-              :alt="project.project_name"
-              class="w-full h-48 object-cover"
-            />
-          </template>
-          <template #footer>
-            <UButton
-              :to="project.url"
-              target="_blank"
-              label="Lihat Detail"
-              :trailing="true"
-              icon="i-lucide-external-link"
-              variant="subtle"
-            />
-          </template>
-        </UPageCard>
+        <template v-if="!pending">
+          <UPageCard
+            v-for="(project, index) in projects"
+            :key="index"
+            variant="subtle"
+            :description="project.description"
+            :title="project.project_name"
+          >
+            <template #header>
+              <img
+                :src="project.image"
+                :alt="project.project_name"
+                class="w-full h-48 object-cover"
+              />
+            </template>
+            <template #footer>
+              <UButton
+                :to="project.url"
+                target="_blank"
+                label="Lihat Detail"
+                :trailing="true"
+                icon="i-lucide-external-link"
+                variant="subtle"
+              />
+            </template>
+          </UPageCard>
+        </template>
       </UPageColumns>
     </UPageSection>
 
