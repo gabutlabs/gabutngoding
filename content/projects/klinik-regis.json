@@ -1,0 +1,6 @@
+{
+  "project_name": "Klinik Registration",
+  "description": "Sistem antrian dan pendaftaran pasien online untuk klinik, dibangun dengan Nuxt.js dan Laravel API.",
+  "image": "/images/project/klinik-regis.png",
+  "url": "https://github.com/username/klinik-reg"
+}

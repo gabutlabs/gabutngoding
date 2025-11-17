@@ -1,0 +1,6 @@
+{
+  "project_name": "Aplikasi Rental",
+  "description": "Sistem penyewaan dan manajemen booking rental, dibangun dengan laravel 12 dan inertia react",
+  "image": "/images/project/rental.png",
+  "url": "https://github.com/username/telegram-bot"
+}
