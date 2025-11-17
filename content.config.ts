@@ -11,6 +11,13 @@ export default defineContentConfig({
         description: z.string(),
         image: z.string(),
         url: z.string(),
+        github: z.string().optional(),
+        is_private: z.boolean().optional().default(false),
+        demo_credentials: z.object({
+          username: z.string().optional(),
+          password: z.string().optional(),
+          note: z.string().optional()
+        }).optional()
       }),
     }),
   },

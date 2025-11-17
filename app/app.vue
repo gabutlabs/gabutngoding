@@ -3,13 +3,13 @@ useHead({
   meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
   link: [{ rel: "icon", href: "/favicon.ico" }],
   htmlAttrs: {
-    lang: "en",
+    lang: "id",
   },
 });
 
 const title = "Gabut Ngoding";
 const description =
-  "Website yang menyimpan semua kegabutanku dikalah libur dan ingin ngoding";
+  "Website yang menyimpan semua kegabutan saya di kala libur dan ingin ngoding";
 
 useSeoMeta({
   title,
@@ -20,6 +20,21 @@ useSeoMeta({
   twitterImage: "https://ui.nuxt.com/assets/templates/nuxt/starter-light.png",
   twitterCard: "summary_large_image",
 });
+const route = useRoute();
+const menu = ref([
+  {
+    label: "Beranda",
+    to: "/",
+  },
+  {
+    label: "Produk",
+    to: "/project",
+  },
+  {
+    label: "Tentang",
+    to: "/about",
+  },
+]);
 </script>
 
 <template>
@@ -30,7 +45,7 @@ useSeoMeta({
           <AppLogo class="w-auto h-6 shrink-0" />
         </NuxtLink>
       </template>
-
+      <UNavigationMenu :items="menu" />
       <template #right>
         <UColorModeButton />
 
@@ -54,7 +69,7 @@ useSeoMeta({
     <UFooter>
       <template #left>
         <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+          Dibangun dengan Nuxt UI • © {{ new Date().getFullYear() }}
         </p>
       </template>
 

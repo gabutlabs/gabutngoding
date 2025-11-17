@@ -1,6 +1,12 @@
 {
-  "project_name": "Klinik Registration",
+  "project_name": "Pendaftaran Klinik",
   "description": "Sistem antrian dan pendaftaran pasien online untuk klinik, dibangun dengan Nuxt.js dan Laravel API.",
   "image": "/images/project/klinik-regis.png",
-  "url": "https://github.com/username/klinik-reg"
+  "url": "https://github.com/username/klinik-reg",
+  "is_private": true,
+  "demo_credentials": {
+    "username": "testing@mail.com",
+    "password": "password",
+    "note": "Beberapa fitur seperti pendaftaran dan chatbot WhatsApp dinonaktifkan dalam demo. Untuk fungsionalitas lengkap dan pembelian source code, silakan hubungi saya."
+  }
 }

@@ -1,6 +1,12 @@
 {
   "project_name": "Usahaku",
-  "description": "Sebuah sistem manajemen penjualan untuk pengusaha perorangan. dibangun dengan elysia dan reactjs",
+  "description": "Sebuah sistem manajemen penjualan untuk pengusaha perorangan, dibangun dengan Elysia dan ReactJS",
   "image": "/images/project/usahaku.png",
-  "url": "#"
+  "url": "#",
+  "is_private": true,
+  "demo_credentials": {
+    "username": "testing@mail.com",
+    "password": "password",
+    "note": "Kredensial demo disediakan untuk keperluan pengujian. Untuk akses penuh dan pembelian source code, silakan hubungi saya."
+  }
 }

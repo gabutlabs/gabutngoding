@@ -1,3 +1,10 @@
+<script setup lang="ts">
+// Beri ID unik untuk :key dan tambahkan 'url' untuk tombol demo/github
+const { data: projects } = await useAsyncData("projects", () => {
+  return queryCollection("projects").all();
+});
+</script>
+
 <template>
   <div>
     <UPageHero
@@ -5,8 +12,8 @@
       description="Gabut Ngoding merupakan sebuah website tempat saya menaruh semua hasil project gabut saya"
       :links="[
         {
-          label: 'Lihat Project',
-          to: '#features', // <-- OPTIMASI KONTEN: Link ke section project
+          label: 'Lihat Produk',
+          to: '/project', // <-- OPTIMASI KONTEN: Link ke section project
           trailingIcon: 'i-lucide-arrow-right',
           size: 'xl',
         },
@@ -24,8 +31,8 @@
 
     <UPageSection
       id="features"
-      title="PROJECT"
-      description="Dibawah ini adalah hasil project yang saya buat ketika senggang,belajar ataupun gabut ingin buat sesuatu"
+      title="PROYEK"
+      description="Berikut ini adalah hasil proyek yang saya buat ketika senggang, belajar, atau gabut ingin membuat sesuatu"
     >
       <UPageColumns>
         <UPageCard
@@ -81,9 +88,3 @@
     </UPageSection>
   </div>
 </template>
-<script setup lang="ts">
-// Beri ID unik untuk :key dan tambahkan 'url' untuk tombol demo/github
-const { data: projects } = await useAsyncData("projects", () => {
-  return queryCollection("projects").all();
-});
-</script>

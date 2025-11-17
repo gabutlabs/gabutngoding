@@ -1,6 +1,12 @@
 {
   "project_name": "Aplikasi Rental",
-  "description": "Sistem penyewaan dan manajemen booking rental, dibangun dengan laravel 12 dan inertia react",
+  "description": "Sistem penyewaan dan manajemen booking rental, dibangun dengan Laravel 12 dan Inertia React",
   "image": "/images/project/rental.png",
-  "url": "https://github.com/username/telegram-bot"
+  "url": "https://github.com/username/telegram-bot",
+  "is_private": true,
+  "demo_credentials": {
+    "username": "testing@mail.com",
+    "password": "password",
+    "note": "Beberapa fitur seperti pendaftaran dan integrasi bot Telegram dinonaktifkan dalam demo. Untuk fungsionalitas lengkap dan pembelian source code, silakan hubungi saya."
+  }
 }
