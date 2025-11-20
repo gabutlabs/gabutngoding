@@ -31,7 +31,7 @@ const { data: projects, pending } = await useAsyncData("home-projects", () => {
 
     <UPageSection
       id="features"
-      title="PRODUK PILIHAN"
+      title="PRODUK SAYA"
       description="Berikut ini adalah hasil produk yang saya buat ketika senggang, belajar, atau gabut ingin membuat sesuatu"
     >
       <UPageColumns>
