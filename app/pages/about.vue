@@ -34,11 +34,10 @@ const description =
     >
       <div class="prose prose-gray max-w-3xl mx-auto dark:prose-invert">
         <p class="text-lg">
-          Hai, saya <span class="font-bold">Alwi</span>, seorang pengembang yang
-          penuh semangat yang menyukai membuat solusi digital di waktu luang
-          saya. Saya memulai perjalanan ini di waktu senggang, yang kemudian
-          melahirkan website ini, Gabut Ngoding - tempat saya mendokumentasikan
-          dan menampilkan proyek-proyek pribadi saya.
+          Hai, saya <span class="font-bold">Alwi</span>, seorang Software Engineer yang
+          penuh semangat dalam menciptakan solusi digital. Saya selalu antusias mengeksplorasi teknologi baru dan menyelesaikan tantangan kompleks, yang kemudian
+          melahirkan platform ini - tempat saya mendokumentasikan
+          dan menampilkan karya-karya profesional saya.
         </p>
 
         <p>
@@ -70,10 +69,10 @@ const description =
             untuk menciptakan solusi-solusi inovatif.
           </p>
           <p>
-            Ide Gabut Ngoding muncul dari keinginan saya untuk mendokumentasikan
-            dan berbagi proyek-proyek yang saya buat di waktu senggang. Ini
-            telah menjadi repositori perjalanan pembelajaran saya dan portofolio
-            dari karya saya.
+            Ide Gabut Ngoding awalnya muncul dari keinginan saya untuk mendokumentasikan
+            dan berbagi proyek-proyek yang saya buat di waktu senggang. Kini, platform ini
+            telah berevolusi menjadi repositori perjalanan pembelajaran dan portofolio
+            profesional dari karya-karya saya.
           </p>
         </div>
 
@@ -190,7 +189,7 @@ const description =
 
         <UPageCard
           title="Mari Berkolaborasi"
-          description="Saya saat ini tersedia untuk proyek freelance, pengembangan aplikasi kustom, atau penjualan source code."
+          description="Saya selalu terbuka untuk diskusi profesional, peluang freelance, atau kolaborasi pengembangan perangkat lunak."
           variant="subtle"
         >
           <p class="mb-4">

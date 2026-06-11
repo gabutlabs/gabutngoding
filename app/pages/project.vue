@@ -1,16 +1,16 @@
 <script setup lang="ts">
 definePageMeta({
-  title: "Produk",
-  description: "Kumpulan produk digital saya",
+  title: "Portofolio",
+  description: "Kumpulan karya dan eksplorasi digital saya",
 });
 
 const { data: projects } = await useAsyncData("all-projects", () => {
   return queryCollection("projects").all();
 });
 
-const title = "Produk Saya";
+const title = "Portofolio Saya";
 const description =
-  "Jelajahi produk digital yang telah saya kembangkan di waktu luang saya.";
+  "Jelajahi berbagai karya digital, proyek sumber terbuka, dan eksplorasi teknologi yang telah saya kembangkan.";
 </script>
 
 <template>
@@ -38,8 +38,8 @@ const description =
 
     <UPageSection
       id="projects"
-      title="Produk Unggulan"
-      description="Kumpulan produk digital yang telah saya kembangkan di waktu luang, mengeksplorasi teknologi baru dan menyelesaikan masalah menarik."
+      title="Karya Pilihan"
+      description="Kumpulan proyek digital yang telah saya kembangkan, mengeksplorasi teknologi baru, dan merancang solusi untuk berbagai masalah."
     >
       <div v-if="projects && projects.length > 0" class="space-y-12">
         <UPageCard
@@ -49,6 +49,7 @@ const description =
           :description="project.description"
           variant="outline"
           class="hover:shadow-lg transition-shadow duration-300"
+          :ui="{ footer: 'w-full' }"
         >
           <template #header>
             <div
@@ -70,7 +71,7 @@ const description =
 
           <template #footer>
             <div class="flex flex-col w-full space-y-3">
-              <div class="flex justify-between items-center">
+              <div class="flex gap-3 w-full">
                 <UButton
                   :to="project.url"
                   target="_blank"
@@ -104,7 +105,8 @@ const description =
 
               <div
                 v-if="project.demo_credentials"
-                class="text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 p-3 rounded-md"
+                class="w-full text-xs text-gray-500 dark:text-gray-400 bg-gray-100 dark:bg-gray-800 p-3 rounded-md"
+                style="min-width: 100%"
               >
                 <p v-if="project.demo_credentials.username">
                   <span class="font-medium">Akun Demo:</span>
@@ -127,16 +129,16 @@ const description =
           name="i-lucide-folder-open"
           class="h-16 w-16 text-gray-400 mx-auto mb-4"
         />
-        <h3 class="text-xl font-medium mb-2">Belum Ada Produk</h3>
+        <h3 class="text-xl font-medium mb-2">Belum Ada Proyek</h3>
         <p class="text-gray-500 dark:text-gray-400">
-          Periksa kembali nanti untuk pembaruan produk terbaru saya.
+          Periksa kembali nanti untuk pembaruan karya terbaru saya.
         </p>
       </div>
     </UPageSection>
 
     <UPageSection
       title="Teknologi yang Digunakan"
-      description="Teknologi dan alat-alat yang telah saya gunakan dalam berbagai produk"
+      description="Teknologi dan alat yang saya gunakan dalam mengembangkan proyek-proyek saya"
       id="technologies"
     >
       <div
@@ -200,13 +202,13 @@ const description =
 
     <UPageSection
       id="contact"
-      title="Tertarik dengan Produk Saya?"
-      description="Saya terbuka untuk diskusi tentang produk-produk saya. Mari bicarakan kebutuhan Anda."
+      title="Tertarik untuk Berkolaborasi?"
+      description="Saya selalu terbuka untuk diskusi mengenai peluang proyek baru. Mari wujudkan ide Anda."
     >
       <UPageColumns>
         <UPageCard
-          title="Beli Produk Saya"
-          description="Saya menyediakan source code produk-produk saya untuk dijual. Hubungi saya untuk informasi lebih lanjut."
+          title="Butuh Bantuan Teknis?"
+          description="Jika Anda membutuhkan bantuan dalam pengembangan aplikasi atau memiliki proyek yang ingin didiskusikan, jangan ragu untuk menghubungi saya."
           variant="subtle"
         >
           <UButton
@@ -215,13 +217,13 @@ const description =
             class="w-full"
             icon="i-lucide-briefcase"
           >
-            Hubungi untuk Pembelian
+            Mari Berdiskusi
           </UButton>
         </UPageCard>
 
         <UPageCard
           title="Jelajahi Lebih Lanjut"
-          description="Lihat GitHub saya untuk produk tambahan dan kontribusi lainnya."
+          description="Lihat GitHub saya untuk repositori open-source dan kontribusi lainnya."
           variant="subtle"
         >
           <UButton

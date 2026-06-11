@@ -8,11 +8,11 @@ const { data: projects, pending } = await useAsyncData("home-projects", () => {
 <template>
   <div>
     <UPageHero
-      title="Selamat Datang di Gabut Ngoding"
-      description="Gabut Ngoding merupakan sebuah website tempat saya menaruh semua hasil project gabut saya"
+      title="Selamat Datang di Portofolio Saya"
+      description="Tempat saya mendokumentasikan karya, eksperimen, dan eksplorasi dalam pengembangan perangkat lunak."
       :links="[
         {
-          label: 'Lihat Semua Produk',
+          label: 'Lihat Portofolio',
           to: '/project', // <-- OPTIMASI KONTEN: Link ke section project
           trailingIcon: 'i-lucide-arrow-right',
           size: 'xl',
@@ -31,8 +31,8 @@ const { data: projects, pending } = await useAsyncData("home-projects", () => {
 
     <UPageSection
       id="features"
-      title="PRODUK SAYA"
-      description="Berikut ini adalah hasil produk yang saya buat ketika senggang, belajar, atau gabut ingin membuat sesuatu"
+      title="PORTOFOLIO KARYA"
+      description="Berikut ini adalah beberapa karya dan eksplorasi yang telah saya kembangkan."
     >
       <UPageColumns>
         <template v-if="!pending">
@@ -67,8 +67,8 @@ const { data: projects, pending } = await useAsyncData("home-projects", () => {
 
     <UPageSection>
       <UPageCTA
-        title="Tertarik untuk Bekerja Sama?"
-        description="Saya terbuka untuk proyek freelance, pembuatan aplikasi kustom, atau penjualan source code. Jangan ragu hubungi saya melalui tombol di bawah ini."
+        title="Mari Berkolaborasi"
+        description="Saya terbuka untuk peluang kerja sama, proyek freelance, atau diskusi seputar pengembangan aplikasi. Jangan ragu untuk menghubungi saya."
         variant="subtle"
         :links="[
           {

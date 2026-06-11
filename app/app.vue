@@ -9,7 +9,7 @@ useHead({
 
 const title = "Gabut Ngoding";
 const description =
-  "Website yang menyimpan semua kegabutan saya di kala libur dan ingin ngoding";
+  "Portofolio pribadi yang mendokumentasikan karya dan eksplorasi saya dalam pengembangan perangkat lunak.";
 
 useSeoMeta({
   title,
@@ -27,7 +27,7 @@ const menu = ref([
     to: "/",
   },
   {
-    label: "Produk",
+    label: "Portofolio",
     to: "/project",
   },
   {
