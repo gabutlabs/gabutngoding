@@ -1,9 +1,11 @@
 {
   "project_name": "Pendaftaran Klinik",
-  "description": "Sistem antrian dan pendaftaran pasien online untuk klinik, dibangun dengan Nuxt.js dan Laravel API.",
+  "description": "A comprehensive clinic registration system managing patient intake, queuing, and basic medical records. Built for high concurrency.",
   "image": "/images/project/klinik-regis.png",
   "url": "https://github.com/username/klinik-reg",
   "is_private": true,
+  "icon": "i-lucide-heart-pulse",
+  "technologies": ["Laravel", "Vue.js", "PostgreSQL"],
   "demo_credentials": {
     "username": "testing@mail.com",
     "password": "password",

@@ -10,9 +10,11 @@ export default defineContentConfig({
         project_name: z.string(),
         description: z.string(),
         image: z.string(),
-        url: z.string(),
+        url: z.string().optional(),
         github: z.string().optional(),
         is_private: z.boolean().optional().default(false),
+        icon: z.string().optional(),
+        technologies: z.array(z.string()).optional(),
         demo_credentials: z.object({
           username: z.string().optional(),
           password: z.string().optional(),

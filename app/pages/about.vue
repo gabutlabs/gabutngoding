@@ -1,213 +1,238 @@
 <script setup lang="ts">
-const title = "Tentang Saya";
-const description =
-  "Pelajari lebih lanjut tentang perjalanan, keterampilan, dan apa yang memotivasi saya sebagai pengembang.";
+definePageMeta({
+  title: "About Me | gabutngoding",
+  description:
+    "Pelajari lebih lanjut tentang perjalanan, keterampilan, dan apa yang memotivasi saya sebagai pengembang.",
+});
 </script>
 
 <template>
-  <div>
-    <UPageHero
-      :title="title"
-      :description="description"
-      :links="[
-        {
-          label: 'Hubungi Saya',
-          to: '#contact',
-          trailingIcon: 'i-lucide-arrow-right',
-          size: 'xl',
-        },
-        {
-          label: 'Lihat Proyek',
-          to: '/',
-          icon: 'i-lucide-folder-open',
-          size: 'xl',
-          color: 'neutral',
-          variant: 'subtle',
-        },
-      ]"
-    />
-
-    <UPageSection
-      title="Siapa Saya"
-      description="Pengenalan singkat tentang latar belakang dan semangat saya dalam pengembangan perangkat lunak"
-      id="about"
+  <div class="antialiased">
+    <!-- Hero Section -->
+    <section
+      class="mx-auto grid max-w-7xl items-center gap-12 px-6 py-16 md:grid-cols-2 md:px-8 md:py-24"
     >
-      <div class="prose prose-gray max-w-3xl mx-auto dark:prose-invert">
-        <p class="text-lg">
-          Hai, saya <span class="font-bold">Alwi</span>, seorang Software Engineer yang
-          penuh semangat dalam menciptakan solusi digital. Saya selalu antusias mengeksplorasi teknologi baru dan menyelesaikan tantangan kompleks, yang kemudian
-          melahirkan platform ini - tempat saya mendokumentasikan
-          dan menampilkan karya-karya profesional saya.
+      <div>
+        <h1
+          class="mb-6 text-[28px] font-bold leading-[36px] md:text-[48px] md:leading-[56px] md:tracking-[-0.02em]"
+        >
+          <span class="text-on-surface">The Mind Behind</span><br />
+          <span class="mt-2 block text-primary">the 'Gabut'.</span>
+        </h1>
+        <p class="mb-8 max-w-lg leading-relaxed text-on-surface-variant">
+          Hi, I'm Alwi. What started as idle curiosity—the essence of
+          'gabut'—has evolved into a passionate pursuit of building robust,
+          scalable backend systems. I engineer solutions that are as solid as
+          they are elegant.
         </p>
-
-        <p>
-          Saya mengkhususkan diri dalam pengembangan backend tetapi saya juga
-          mampu dalam pengembangan frontend. Meskipun saya cukup nyaman dengan
-          teknologi frontend, saya jujur saja - styling CSS yang kompleks bukan
-          keahlian terkuat saya. Namun, saya terus belajar dan meningkatkan
-          keterampilan saya. Fokus utama dan semangat saya terletak pada
-          pengembangan backend, di mana saya menikmati merancang solusi yang
-          kuat dan menyelesaikan tantangan sisi server yang kompleks.
-        </p>
+        <div class="flex gap-4">
+          <UButton
+            to="/#portfolio"
+            size="lg"
+            class="font-bold"
+            icon="i-lucide-terminal"
+          >
+            View Projects
+          </UButton>
+          <UButton
+            to="#"
+            variant="outline"
+            size="lg"
+            color="secondary"
+            class="font-bold"
+          >
+            Download CV
+          </UButton>
+        </div>
       </div>
-    </UPageSection>
 
-    <UPageSection
-      title="Perjalanan Saya"
-      description="Bagaimana semangat saya dalam pengembangan perangkat lunak berkembang seiring waktu"
-      id="journey"
-    >
-      <ULandingSection
-        :ui="{ wrapper: 'grid grid-cols-1 md:grid-cols-2 gap-12' }"
+      <div
+        class="relative overflow-hidden rounded-2xl border border-surface-variant"
+        style="
+          background-image: url(&quot;/images/gabut_ngoding_transparent_precise.png&quot;);
+          background-size: contain;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-color: var(--ds-surface-container);
+          min-height: 360px;
+        "
       >
-        <div>
-          <h3 class="text-xl font-bold mb-4">Awal Mula</h3>
-          <p class="mb-4">
-            Perjalanan saya dalam pengembangan perangkat lunak dimulai di waktu
-            luang ketika saya memutuskan untuk menjelajahi pemrograman. Apa yang
-            awalnya hanya hobi kini telah menjadi semangat yang mendorong saya
-            untuk menciptakan solusi-solusi inovatif.
-          </p>
-          <p>
-            Ide Gabut Ngoding awalnya muncul dari keinginan saya untuk mendokumentasikan
-            dan berbagi proyek-proyek yang saya buat di waktu senggang. Kini, platform ini
-            telah berevolusi menjadi repositori perjalanan pembelajaran dan portofolio
-            profesional dari karya-karya saya.
-          </p>
-        </div>
-
-        <div class="flex justify-center items-center">
-          <UAvatar
-            :src="'/images/about-me.jpg'"
-            :alt="'Tentang Saya'"
-            size="2xl"
-            class="rounded-lg shadow-lg"
-          />
-        </div>
-      </ULandingSection>
-    </UPageSection>
-
-    <UPageSection
-      title="Keterampilan & Teknologi"
-      description="Teknologi dan alat-alat yang saya gunakan"
-      id="skills"
-    >
-      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
-        <UPageCard
-          title="Frontend"
-          description="Membangun antarmuka yang indah dan responsif"
-          variant="subtle"
-        >
-          <template #header>
-            <div class="flex justify-center">
-              <UIcon name="i-lucide-monitor" class="h-10 w-10 text-primary" />
-            </div>
-          </template>
-        </UPageCard>
-
-        <UPageCard
-          title="Backend"
-          description="Pengembangan sisi server dan API"
-          variant="subtle"
-        >
-          <template #header>
-            <div class="flex justify-center">
-              <UIcon name="i-lucide-server" class="h-10 w-10 text-primary" />
-            </div>
-          </template>
-        </UPageCard>
-
-        <UPageCard
-          title="Database"
-          description="Penyimpanan dan manajemen data"
-          variant="subtle"
-        >
-          <template #header>
-            <div class="flex justify-center">
-              <UIcon name="i-lucide-database" class="h-10 w-10 text-primary" />
-            </div>
-          </template>
-        </UPageCard>
-
-        <UPageCard
-          title="DevOps"
-          description="Deployment dan infrastruktur"
-          variant="subtle"
-        >
-          <template #header>
-            <div class="flex justify-center">
-              <UIcon name="i-lucide-settings" class="h-10 w-10 text-primary" />
-            </div>
-          </template>
-        </UPageCard>
+        <div
+          class="pointer-events-none absolute inset-0 opacity-10"
+          style="
+            background-image: radial-gradient(
+              circle at 2px 2px,
+              #bdee96 1px,
+              transparent 0
+            );
+            background-size: 24px 24px;
+          "
+        />
       </div>
-    </UPageSection>
+    </section>
 
-    <UPageSection
-      id="contact"
-      title="Hubungi Saya"
-      description="Punya proyek dalam pikiran atau ingin membicarakan peluang kerja sama? Ayo terhubung!"
-    >
-      <UPageColumns>
-        <UPageCard
-          title="Informasi Kontak"
-          description="Jangan ragu untuk menghubungi saya melalui saluran-saluran berikut"
-          variant="subtle"
+    <!-- Biography Bento Grid -->
+    <section class="mx-auto max-w-7xl px-6 py-12 md:px-8">
+      <h2
+        class="mb-8 border-l-4 border-primary pl-4 text-[28px] font-bold leading-[36px] text-primary md:text-[32px] md:leading-[40px] md:tracking-[-0.01em]"
+      >
+        System Initialized: _whoami
+      </h2>
+
+      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+        <!-- Main Bio Card -->
+        <div
+          class="rounded-xl border border-surface-variant bg-surface-container p-8 md:col-span-2"
         >
-          <UButton
-            to="https://wa.me/6285156469473"
-            target="_blank"
-            block
-            class="mb-3"
-            variant="outline"
-            icon="i-simple-icons-whatsapp"
+          <h3
+            class="mb-4 flex items-center gap-2 text-sm font-medium tracking-[0.02em] text-primary"
           >
-            WhatsApp
-          </UButton>
-
-          <UButton
-            to="https://t.me/Baiikuzo"
-            target="_blank"
-            block
-            class="mb-3"
-            variant="outline"
-            icon="i-simple-icons-telegram"
-          >
-            Telegram
-          </UButton>
-
-          <UButton
-            to="https://github.com/gabutlabs"
-            target="_blank"
-            block
-            variant="outline"
-            icon="i-simple-icons-github"
-          >
-            GitHub
-          </UButton>
-        </UPageCard>
-
-        <UPageCard
-          title="Mari Berkolaborasi"
-          description="Saya selalu terbuka untuk diskusi profesional, peluang freelance, atau kolaborasi pengembangan perangkat lunak."
-          variant="subtle"
-        >
-          <p class="mb-4">
-            Baik Anda memiliki aplikasi web, aplikasi mobile, atau proyek
-            digital lain dalam pikiran, saya di sini untuk membantu mewujudkan
-            ide-ide Anda dengan teknologi modern dan praktik terbaik.
+            <UIcon name="i-lucide-code-2" class="h-5 w-5" />
+            5+ Years Backend Experience
+          </h3>
+          <p class="mb-4 leading-relaxed text-on-surface-variant">
+            I specialize in architecting the unseen infrastructure that powers
+            digital experiences. With deep roots in PHP frameworks (Laravel,
+            CodeIgniter) and a strong command of modern Go and TS/JS ecosystems,
+            I build APIs that don't just work—they perform.
           </p>
+          <p class="leading-relaxed text-on-surface-variant">
+            While my heart is in the backend, I'm well-versed in bridging the
+            gap to the frontend using Vue and React, ensuring seamless
+            end-to-end delivery. The 'gabutngoding' philosophy is simple:
+            turning spare time into reliable code.
+          </p>
+        </div>
 
-          <UButton
-            to="mailto:contact@gabutngoding.com"
-            block
-            color="primary"
-            icon="i-lucide-mail"
+        <!-- Stats Card -->
+        <div
+          class="flex flex-col items-center justify-center rounded-xl border border-surface-variant bg-surface-variant/50 p-8 text-center"
+        >
+          <UIcon name="i-lucide-cpu" class="mb-4 h-10 w-10 text-primary" />
+          <div class="mb-2 text-4xl font-bold text-on-surface">5+</div>
+          <div class="text-sm font-medium text-on-surface-variant">
+            Years of Engineering
+          </div>
+        </div>
+
+        <!-- Philosophy Card -->
+        <div
+          class="rounded-xl border border-primary/20 bg-surface-container-high p-8 md:col-span-3"
+        >
+          <h3
+            class="mb-4 flex items-center gap-2 text-sm font-medium tracking-[0.02em] text-primary"
           >
-            Kirim Email
-          </UButton>
-        </UPageCard>
-      </UPageColumns>
-    </UPageSection>
+            <UIcon name="i-lucide-boxes" class="h-5 w-5" />
+            Professional Philosophy
+          </h3>
+          <div class="grid gap-6 md:grid-cols-2">
+            <div>
+              <h4 class="mb-2 font-bold text-on-surface">Clean Architecture</h4>
+              <p class="text-sm leading-relaxed text-on-surface-variant">
+                Separation of concerns isn't just a buzzword; it's the
+                foundation of maintainable software. I prioritize writing
+                testable, decoupled code that scales with the business.
+              </p>
+            </div>
+            <div>
+              <h4 class="mb-2 font-bold text-on-surface">Scalability First</h4>
+              <p class="text-sm leading-relaxed text-on-surface-variant">
+                Whether it's optimizing database queries or designing
+                microservices, I build with future growth in mind, ensuring
+                systems remain resilient under load.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="mx-auto max-w-7xl px-6 py-12 md:px-8">
+      <h2
+        class="mb-8 border-l-4 border-primary pl-4 text-[28px] font-bold leading-[36px] text-primary md:text-[32px] md:leading-[40px] md:tracking-[-0.01em]"
+      >
+        Core Dependencies
+      </h2>
+
+      <div class="grid grid-cols-2 gap-4 md:grid-cols-4">
+        <div
+          class="group flex flex-col items-center gap-3 rounded-lg border border-surface-variant bg-surface-container p-6 transition-colors hover:border-primary"
+        >
+          <UIcon
+            name="i-lucide-database"
+            class="h-9 w-9 text-on-surface-variant transition-colors group-hover:text-primary"
+          />
+          <span class="text-sm font-medium">Laravel</span>
+        </div>
+        <div
+          class="group flex flex-col items-center gap-3 rounded-lg border border-surface-variant bg-surface-container p-6 transition-colors hover:border-primary"
+        >
+          <UIcon
+            name="i-lucide-terminal"
+            class="h-9 w-9 text-on-surface-variant transition-colors group-hover:text-primary"
+          />
+          <span class="text-sm font-medium">Go</span>
+        </div>
+        <div
+          class="group flex flex-col items-center gap-3 rounded-lg border border-surface-variant bg-surface-container p-6 transition-colors hover:border-primary"
+        >
+          <UIcon
+            name="i-simple-icons-javascript"
+            class="h-9 w-9 text-on-surface-variant transition-colors group-hover:text-primary"
+          />
+          <span class="text-sm font-medium">TS / JS</span>
+        </div>
+        <div
+          class="group flex flex-col items-center gap-3 rounded-lg border border-surface-variant bg-surface-container p-6 transition-colors hover:border-primary"
+        >
+          <UIcon
+            name="i-lucide-globe"
+            class="h-9 w-9 text-on-surface-variant transition-colors group-hover:text-primary"
+          />
+          <span class="text-sm font-medium">Vue / React</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personal Touch -->
+    <section class="mx-auto max-w-7xl px-6 py-12 md:px-8">
+      <div
+        class="relative overflow-hidden rounded-2xl border border-surface-variant bg-surface-container-highest p-8 md:p-12"
+      >
+        <div
+          class="pointer-events-none absolute -right-10 -top-10 select-none text-[128px] font-bold text-surface/50 opacity-10"
+        >
+          GABUT
+        </div>
+        <div class="relative z-10 max-w-2xl">
+          <h2
+            class="mb-4 text-[28px] font-bold leading-[36px] text-primary md:text-[32px] md:leading-[40px] md:tracking-[-0.01em]"
+          >
+            Beyond the Terminal
+          </h2>
+          <p class="mb-6 leading-relaxed text-on-surface-variant">
+            When I'm not untangling complex logic or debugging server
+            deployments, you can usually find me brewing a perfect cup of
+            coffee, exploring new tech stacks (just for fun), or trying to
+            automate another trivial part of my life.
+          </p>
+          <div class="flex gap-4">
+            <span
+              class="inline-flex items-center gap-1 rounded-full border border-outline-variant/30 bg-surface-variant px-3 py-1 text-sm font-medium text-on-surface-variant"
+            >
+              <UIcon name="i-lucide-coffee" class="h-4 w-4" />
+              Coffee Enthusiast
+            </span>
+            <span
+              class="inline-flex items-center gap-1 rounded-full border border-outline-variant/30 bg-surface-variant px-3 py-1 text-sm font-medium text-on-surface-variant"
+            >
+              <UIcon name="i-lucide-headphones" class="h-4 w-4" />
+              Lofi Beats
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
 </template>

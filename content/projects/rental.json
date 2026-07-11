@@ -4,6 +4,8 @@
   "image": "/images/project/rental.png",
   "url": "https://github.com/username/telegram-bot",
   "is_private": true,
+  "icon": "i-lucide-car",
+  "technologies": ["Laravel", "React"],
   "demo_credentials": {
     "username": "testing@mail.com",
     "password": "password",

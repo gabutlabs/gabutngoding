@@ -1,62 +1,83 @@
 <script setup>
 useHead({
-  meta: [{ name: "viewport", content: "width=device-width, initial-scale=1" }],
-  link: [{ rel: "icon", href: "/favicon-site/favicon.ico" }],
+  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+  link: [{ rel: 'icon', href: '/favicon-site/favicon.ico' }],
   htmlAttrs: {
-    lang: "id",
-  },
-});
+    lang: 'id'
+  }
+})
 
-const title = "Gabut Ngoding";
+const title = 'Gabut Ngoding'
 const description =
-  "Portofolio pribadi yang mendokumentasikan karya dan eksplorasi saya dalam pengembangan perangkat lunak.";
+  'Portofolio pribadi yang mendokumentasikan karya dan eksplorasi saya dalam pengembangan perangkat lunak.'
 
 useSeoMeta({
   title,
   description,
   ogTitle: title,
   ogDescription: description,
-  ogImage: "https://ui.nuxt.com/assets/templates/nuxt/starter-light.png",
-  twitterImage: "https://ui.nuxt.com/assets/templates/nuxt/starter-light.png",
-  twitterCard: "summary_large_image",
-});
-const route = useRoute();
+  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
+  twitterImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
+  twitterCard: 'summary_large_image'
+})
+
 const menu = ref([
   {
-    label: "Beranda",
-    to: "/",
+    label: 'Home',
+    to: '/'
   },
   {
-    label: "Portofolio",
-    to: "/project",
+    label: 'About',
+    to: '/about'
   },
   {
-    label: "Tentang",
-    to: "/about",
+    label: 'Portfolio',
+    to: '/project'
   },
-]);
+  {
+    label: 'Contact',
+    to: '/contact'
+  }
+])
 </script>
 
 <template>
   <UApp>
-    <UHeader>
+    <UHeader
+      class="bg-surface/90 backdrop-blur-xl border-b border-outline-variant/10"
+    >
       <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
+        <NuxtLink to="/" class="flex items-center gap-3">
+          <img
+            src="/images/gabutngodinglogo.png"
+            alt="gabutngoding logo"
+            class="h-10 w-10 rounded-full border border-primary/20 bg-surface-container object-cover p-0.5"
+          >
+          <span
+            class="text-[20px] font-bold text-primary tracking-tight"
+          >
+            gabutngoding
+          </span>
         </NuxtLink>
       </template>
-      <UNavigationMenu :items="menu" />
+
+      <UNavigationMenu
+        :items="menu"
+        :ui="{
+          link: 'text-on-surface-variant hover:text-primary transition-colors data-[active]:text-primary data-[active]:font-bold',
+          linkLeadingIcon: 'text-primary'
+        }"
+      />
+
       <template #right>
         <UColorModeButton />
 
         <UButton
-          to="https://github.com/gabutlabs"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
+          to="/contact"
+          class="font-bold shadow-sm shadow-primary/20"
+        >
+          Hire Me
+        </UButton>
       </template>
     </UHeader>
 
@@ -64,25 +85,48 @@ const menu = ref([
       <NuxtPage />
     </UMain>
 
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
+    <footer
+      class="w-full border-t border-outline-variant/10 bg-surface-container-lowest py-12 mt-16"
+    >
+      <div
+        class="mx-auto flex max-w-7xl flex-col items-center gap-8 px-6 md:flex-row md:justify-between md:px-8"
+      >
+        <div class="flex items-center gap-3">
+          <img
+            src="/images/gabutngodinglogo.png"
+            alt="gabutngoding logo"
+            class="h-8 w-8 rounded-full border border-primary/20 bg-surface-container object-cover p-0.5"
+          >
+          <span class="text-lg font-bold text-primary tracking-tight">
+            gabutngoding
+          </span>
+        </div>
 
-    <UFooter>
-      <template #left>
-        <p class="text-sm text-muted">
-          Dibangun dengan Nuxt UI • © {{ new Date().getFullYear() }}
+        <p class="text-sm text-on-surface-variant text-center md:text-left">
+          &copy; {{ new Date().getFullYear() }} gabutngoding. Built with
+          precision and a bit of idle curiosity.
         </p>
-      </template>
 
-      <template #right>
-        <UButton
-          to="https://github.com/gabutlabs"
-          target="_blank"
-          icon="i-simple-icons-github"
-          aria-label="GitHub"
-          color="neutral"
-          variant="ghost"
-        />
-      </template>
-    </UFooter>
+        <div class="flex items-center gap-8 text-sm">
+          <UButton
+            to="https://github.com/gabutlabs"
+            target="_blank"
+            variant="link"
+            color="neutral"
+            class="text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100"
+          >
+            GitHub
+          </UButton>
+          <UButton
+            to="mailto:gabutngoding5@gmail.com"
+            variant="link"
+            color="neutral"
+            class="text-on-surface-variant hover:text-primary opacity-80 hover:opacity-100"
+          >
+            Email
+          </UButton>
+        </div>
+      </div>
+    </footer>
   </UApp>
 </template>

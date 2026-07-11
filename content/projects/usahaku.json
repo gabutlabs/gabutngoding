@@ -1,9 +1,11 @@
 {
   "project_name": "Usahaku",
-  "description": "Sebuah sistem manajemen penjualan untuk pengusaha perorangan, dibangun dengan Elysia dan ReactJS",
+  "description": "A developer tool suite packed into a single CLI for scaffolding boilerplate, running quick network tests, and formatting config files.",
   "image": "/images/project/usahaku.png",
   "url": "#",
   "is_private": true,
+  "icon": "i-lucide-terminal",
+  "technologies": ["Elysia", "React"],
   "demo_credentials": {
     "username": "testing@mail.com",
     "password": "password",
