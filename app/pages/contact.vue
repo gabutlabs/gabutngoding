@@ -1,25 +1,27 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Contact | gabutngoding',
-  description: 'Got a project idea or just want to say hi? Drop a message.'
-})
+  title: "Contact | gabutngoding",
+  description: "Got a project idea or just want to say hi? Drop a message.",
+});
 
 const form = reactive({
-  name: '',
-  email: '',
-  message: ''
-})
+  name: "",
+  email: "",
+  message: "",
+});
 
 function handleSubmit() {
   window.open(
     `mailto:gabutngoding5@gmail.com?subject=Hello from ${form.name}&body=${encodeURIComponent(form.message)}%0A%0A--%0A${form.name}%0A${form.email}`,
-    '_blank'
-  )
+    "_blank",
+  );
 }
 </script>
 
 <template>
-  <div class="flex min-h-[calc(100vh-128px)] items-center justify-center px-6 py-16 antialiased md:px-8 md:py-24">
+  <div
+    class="flex min-h-[calc(100vh-128px)] items-center justify-center px-6 py-16 antialiased md:px-8 md:py-24"
+  >
     <div class="relative z-10 grid w-full max-w-[800px] gap-6 md:grid-cols-2">
       <!-- Left -->
       <div class="flex flex-col justify-center space-y-6">
@@ -46,30 +48,52 @@ function handleSubmit() {
             >
               <UIcon name="i-lucide-mail" class="h-5 w-5 text-primary" />
             </div>
-            <span class="text-[13px] leading-[18px]">gabutngoding5@gmail.com</span>
+            <span class="text-[13px] leading-[18px]"
+              >gabutngoding5@gmail.com</span
+            >
           </a>
 
           <div class="flex gap-4 pt-2">
-            <a
-              href="https://github.com/gabutlabs"
-              target="_blank"
-              class="flex h-10 w-10 items-center justify-center rounded border border-secondary-fixed/10 bg-surface-container-high transition-colors hover:border-primary hover:text-primary"
-            >
-              <UIcon name="i-simple-icons-github" class="h-5 w-5" />
-            </a>
-            <a
-              href="#"
-              class="flex h-10 w-10 items-center justify-center rounded border border-secondary-fixed/10 bg-surface-container-high transition-colors hover:border-primary hover:text-primary"
-            >
-              <UIcon name="i-simple-icons-linkedin" class="h-5 w-5" />
-            </a>
-            <a
-              href="https://www.sribu.com/id/users/baidhowi.alwi/professional-web-development-8b1d3873-5fd3-4bff-8650-94688e92fbba"
-              target="_blank"
-              class="flex h-10 w-10 items-center justify-center rounded border border-secondary-fixed/10 bg-surface-container-high transition-colors hover:border-primary hover:text-primary"
-            >
-              <UIcon name="i-lucide-briefcase" class="h-5 w-5" />
-            </a>
+            <UTooltip text="GitHub">
+              <a
+                href="https://github.com/gabutlabs"
+                target="_blank"
+                aria-label="GitHub"
+                class="flex h-10 w-10 items-center justify-center rounded border border-secondary-fixed/10 bg-surface-container-high transition-colors hover:border-primary hover:text-primary"
+              >
+                <UIcon name="i-simple-icons-github" class="h-5 w-5" />
+              </a>
+            </UTooltip>
+            <UTooltip text="LinkedIn">
+              <a
+                href="https://www.linkedin.com/in/mohammad-baidhowi-alwi-5a41b01b7"
+                target="_blank"
+                aria-label="LinkedIn"
+                class="flex h-10 w-10 items-center justify-center rounded border border-secondary-fixed/10 bg-surface-container-high transition-colors hover:border-primary hover:text-primary"
+              >
+                <UIcon name="i-simple-icons-linkedin" class="h-5 w-5" />
+              </a>
+            </UTooltip>
+            <UTooltip text="Sribu">
+              <a
+                href="https://www.sribu.com/id/users/baidhowi.alwi/professional-web-development-8b1d3873-5fd3-4bff-8650-94688e92fbba"
+                target="_blank"
+                aria-label="Sribu"
+                class="flex h-10 w-10 items-center justify-center rounded border border-secondary-fixed/10 bg-surface-container-high transition-colors hover:border-primary hover:text-primary"
+              >
+                <UIcon name="i-lucide-briefcase" class="h-5 w-5" />
+              </a>
+            </UTooltip>
+            <UTooltip text="Fastwork">
+              <a
+                href="https://fastwork.id/byob/Wyt6y2YpJ8?openExternalBrowser=1&source=byob"
+                target="_blank"
+                aria-label="Fastwork"
+                class="flex h-10 w-10 items-center justify-center rounded border border-secondary-fixed/10 bg-surface-container-high transition-colors hover:border-primary hover:text-primary"
+              >
+                <UIcon name="i-lucide-briefcase" class="h-5 w-5" />
+              </a>
+            </UTooltip>
           </div>
         </div>
       </div>
@@ -99,7 +123,7 @@ function handleSubmit() {
               type="text"
               placeholder="John Doe"
               class="rounded border border-secondary-fixed/10 bg-surface-container-low px-4 py-3 leading-relaxed text-on-surface transition-all focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            >
+            />
           </div>
 
           <div class="flex flex-col gap-1">
@@ -115,7 +139,7 @@ function handleSubmit() {
               type="email"
               placeholder="john@example.com"
               class="rounded border border-secondary-fixed/10 bg-surface-container-low px-4 py-3 leading-relaxed text-on-surface transition-all focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
-            >
+            />
           </div>
 
           <div class="flex flex-col gap-1">

@@ -4,7 +4,26 @@ useHead({
   link: [{ rel: 'icon', href: '/favicon-site/favicon.ico' }],
   htmlAttrs: {
     lang: 'id'
-  }
+  },
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'WebSite',
+        name: 'Gabut Ngoding',
+        url: 'https://gabutngoding.my.id',
+        description:
+          'Portofolio pribadi yang mendokumentasikan karya dan eksplorasi saya dalam pengembangan perangkat lunak.',
+        author: {
+          '@type': 'Person',
+          name: 'Alwi',
+          jobTitle: 'Backend Developer',
+          url: 'https://gabutngoding.my.id/about'
+        }
+      })
+    }
+  ]
 })
 
 const title = 'Gabut Ngoding'
@@ -43,9 +62,8 @@ const menu = ref([
 
 <template>
   <UApp>
-    <UHeader
-      class="bg-surface/90 backdrop-blur-xl border-b border-outline-variant/10"
-    >
+    <div class="bg-surface/90 backdrop-blur-xl border-b border-outline-variant/10">
+      <UHeader>
       <template #left>
         <NuxtLink to="/" class="flex items-center gap-3">
           <img
@@ -61,13 +79,7 @@ const menu = ref([
         </NuxtLink>
       </template>
 
-      <UNavigationMenu
-        :items="menu"
-        :ui="{
-          link: 'text-on-surface-variant hover:text-primary transition-colors data-[active]:text-primary data-[active]:font-bold',
-          linkLeadingIcon: 'text-primary'
-        }"
-      />
+      <UNavigationMenu :items="menu" />
 
       <template #right>
         <UColorModeButton />
@@ -80,6 +92,7 @@ const menu = ref([
         </UButton>
       </template>
     </UHeader>
+    </div>
 
     <UMain>
       <NuxtPage />

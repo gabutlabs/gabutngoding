@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/eslint", "@nuxt/ui", "@nuxt/content"],
+  modules: ["@nuxt/eslint", "@nuxt/ui", "@nuxt/content", "@nuxtjs/sitemap"],
+
+  site: {
+    url: "https://gabutngoding.my.id",
+    name: "Gabut Ngoding",
+  },
   devtools: {
     enabled: true,
   },
@@ -16,5 +21,8 @@ export default defineNuxtConfig({
         braceStyle: "1tbs",
       },
     },
+  },
+  nitro: {
+    preset: "cloudflare_module",
   },
 });

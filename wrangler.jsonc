@@ -1,0 +1,8 @@
+{
+  "name": "gabutngoding",
+  "compatibility_date": "2026-07-11",
+  "main": ".output/server/index.mjs",
+  "assets": {
+    "directory": ".output/public"
+  }
+}

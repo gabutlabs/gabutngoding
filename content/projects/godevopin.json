@@ -1,0 +1,12 @@
+{
+  "project_name": "Go Devopin",
+  "description": "A comprehensive logging and system monitoring tool written in Go that provides both REST API, a modern Vue.js web UI, and CLI interfaces for log file analysis and system performance monitoring.",
+  "image": "/images/project/receipt-kuy.png",
+  "is_private": false,
+  "icon": "i-lucide-server",
+  "technologies": [
+    "Go",
+    "Sqlite"
+  ],
+  "github": "https://github.com/gabutlabs/godevopin"
+}
