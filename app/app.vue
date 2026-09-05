@@ -81,6 +81,13 @@ const menu = ref([
 
       <UNavigationMenu :items="menu" />
 
+      <template #body>
+        <UNavigationMenu
+          :items="menu"
+          orientation="vertical"
+        />
+      </template>
+
       <template #right>
         <UColorModeButton />
 
