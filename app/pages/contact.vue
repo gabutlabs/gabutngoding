@@ -1,8 +1,8 @@
 <script setup lang="ts">
 definePageMeta({
-  title: 'Kontak | gabutngoding',
+  title: 'Contact | gabutngoding',
   description:
-    'Mari terhubung untuk membicarakan ide, kolaborasi, atau proyek berikutnya.'
+    'Let’s connect to discuss ideas, collaboration, or your next project.'
 })
 
 const emailAddress = 'gabutngoding5@gmail.com'
@@ -54,22 +54,22 @@ onBeforeUnmount(() => {
             class="mb-7 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/10 px-4 py-2 text-xs font-bold tracking-[0.12em] text-primary"
           >
             <span class="h-2 w-2 animate-pulse rounded-full bg-primary" />
-            STATUS: SIAP BERKOLABORASI
+            STATUS: OPEN TO COLLABORATION
           </div>
 
           <h1
             class="max-w-2xl text-[40px] font-bold leading-[1.08] tracking-[-0.03em] text-on-surface md:text-[64px]"
           >
-            Mari bangun sesuatu yang
-            <span class="text-primary">berguna.</span>
+            Let’s build something
+            <span class="text-primary">useful.</span>
           </h1>
 
           <p
             class="mt-7 max-w-xl text-lg leading-relaxed text-on-surface-variant"
           >
-            Punya ide, masalah teknis, atau sekadar ingin bertukar pikiran?
-            Ceritakan saja konteksnya. Tidak harus sudah punya brief yang
-            sempurna untuk memulai percakapan.
+            Have an idea, a technical problem, or simply want to exchange
+            thoughts? Share the context. You don’t need a perfect brief to
+            start a conversation.
           </p>
 
           <div class="mt-9 grid max-w-xl grid-cols-2 gap-3">
@@ -77,7 +77,7 @@ onBeforeUnmount(() => {
               class="rounded-xl border border-outline-variant/20 bg-surface-container-low p-4"
             >
               <div class="mb-2 text-xs font-bold tracking-[0.12em] text-primary">
-                FOKUS
+                FOCUS
               </div>
               <div class="text-sm font-medium text-on-surface">
                 Backend &amp; web
@@ -156,17 +156,17 @@ onBeforeUnmount(() => {
         <div class="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between md:mb-12">
           <div>
             <div class="mb-3 text-xs font-bold tracking-[0.14em] text-primary">
-              01 / PILIH JALUR
+              01 / CHOOSE A CHANNEL
             </div>
             <h2
               class="text-[28px] font-bold leading-tight tracking-[-0.02em] text-on-surface md:text-[40px]"
             >
-              Terhubung dengan cara yang nyaman.
+              Connect in a way that feels comfortable.
             </h2>
           </div>
           <p class="max-w-sm leading-relaxed text-on-surface-variant md:text-right">
-            Belum ada mail sender di sini—gunakan kanal pilihanmu, dan kita
-            lanjutkan dari sana.
+            There is no mail sender here yet—use your preferred channel, and
+            we’ll continue from there.
           </p>
         </div>
 
@@ -184,11 +184,11 @@ onBeforeUnmount(() => {
                 />
               </div>
               <span class="rounded-full bg-primary/10 px-2.5 py-1 text-[11px] font-bold text-primary">
-                UTAMA
+                PRIMARY
               </span>
             </div>
             <h3 class="mb-2 text-lg font-bold text-on-surface">
-              Email langsung
+              Direct email
             </h3>
             <p class="mb-5 break-all text-sm leading-relaxed text-on-surface-variant">
               {{ emailAddress }}
@@ -202,15 +202,15 @@ onBeforeUnmount(() => {
                 :name="copyState === 'copied' ? 'i-lucide-check' : 'i-lucide-copy'"
                 class="h-4 w-4"
               />
-              <span v-if="copyState === 'copied'">Email tersalin</span>
-              <span v-else-if="copyState === 'error'">Salin manual</span>
-              <span v-else>Salin alamat email</span>
+              <span v-if="copyState === 'copied'">Email copied</span>
+              <span v-else-if="copyState === 'error'">Copy manually</span>
+              <span v-else>Copy email address</span>
             </button>
             <span
               class="sr-only"
               aria-live="polite"
             >
-              {{ copyState === 'copied' ? 'Alamat email berhasil disalin' : '' }}
+              {{ copyState === 'copied' ? 'Email address copied successfully' : '' }}
             </span>
           </div>
 
@@ -230,10 +230,10 @@ onBeforeUnmount(() => {
             </div>
             <h3 class="mb-2 text-lg font-bold text-on-surface">GitHub</h3>
             <p class="text-sm leading-relaxed text-on-surface-variant">
-              Lihat proyek, eksperimen, dan kode yang sedang dirawat.
+              See projects, experiments, and code currently being maintained.
             </p>
             <div class="mt-6 flex items-center gap-2 text-sm font-bold text-primary">
-              Buka profil
+              Open profile
               <UIcon
                 name="i-lucide-arrow-up-right"
                 class="h-4 w-4"
@@ -257,10 +257,10 @@ onBeforeUnmount(() => {
             </div>
             <h3 class="mb-2 text-lg font-bold text-on-surface">LinkedIn</h3>
             <p class="text-sm leading-relaxed text-on-surface-variant">
-              Terhubung untuk peluang kerja dan kolaborasi profesional.
+              Connect for work opportunities and professional collaborations.
             </p>
             <div class="mt-6 flex items-center gap-2 text-sm font-bold text-primary">
-              Buka profil
+              Open profile
               <UIcon
                 name="i-lucide-arrow-up-right"
                 class="h-4 w-4"
@@ -283,7 +283,7 @@ onBeforeUnmount(() => {
               Freelance
             </h3>
             <p class="text-sm leading-relaxed text-on-surface-variant">
-              Mulai proyek web yang lebih terstruktur melalui platform freelance.
+              Start a more structured web project through a freelance platform.
             </p>
             <div class="mt-6 flex flex-wrap gap-2">
               <a
@@ -325,14 +325,14 @@ onBeforeUnmount(() => {
                 name="i-lucide-sparkles"
                 class="h-4 w-4"
               />
-              02 / MULAI DARI YANG ADA
+              02 / START WITH WHAT YOU HAVE
             </div>
             <h2 class="mb-3 text-2xl font-bold text-on-surface md:text-3xl">
-              Tidak perlu menunggu ide yang sempurna.
+              No need to wait for the perfect idea.
             </h2>
             <p class="leading-relaxed text-on-surface-variant">
-              Satu kalimat tentang kebutuhanmu sudah cukup untuk memulai.
-              Sisanya bisa kita pecah menjadi langkah-langkah kecil yang jelas.
+              One sentence about what you need is enough to get started. We can
+              break down the rest into clear, small steps.
             </p>
           </div>
           <UButton
@@ -341,7 +341,7 @@ onBeforeUnmount(() => {
             class="relative z-10 mt-7 shrink-0 font-bold md:mt-0"
             trailing-icon="i-lucide-arrow-right"
           >
-            Lihat karya dulu
+            View my work first
           </UButton>
           <div
             class="pointer-events-none absolute -right-10 -top-20 h-56 w-56 rounded-full border border-primary/20"
