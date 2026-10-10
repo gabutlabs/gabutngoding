@@ -35,58 +35,67 @@ const { data: projects } = await useAsyncData('all-projects', () => {
         <div
           v-for="(project, index) in projects"
           :key="index"
-          class="group flex flex-col rounded-lg border border-tertiary-container/30 bg-surface-container-lowest p-6 transition-colors hover:border-primary/50"
+          class="group flex flex-col overflow-hidden rounded-lg border border-tertiary-container/30 bg-surface-container-lowest transition-colors hover:border-primary/50"
         >
-          <div class="mb-4 flex items-start justify-between">
-            <h3
-              class="text-[24px] font-bold text-on-background transition-colors group-hover:text-primary"
-            >
-              {{ project.project_name }}
-            </h3>
-            <UIcon
-              v-if="project.icon"
-              :name="project.icon"
-              class="h-6 w-6 shrink-0 text-primary"
-            />
-          </div>
+          <ProjectScreenshot
+            v-if="project.image"
+            :src="project.image"
+            :alt="`Preview of ${project.project_name}`"
+            :priority="index === 0"
+          />
 
-          <p class="mb-6 flex-grow leading-relaxed text-on-surface-variant">
-            {{ project.description }}
-          </p>
+          <div class="flex flex-1 flex-col p-6">
+            <div class="mb-4 flex items-start justify-between">
+              <h3
+                class="text-[24px] font-bold text-on-background transition-colors group-hover:text-primary"
+              >
+                {{ project.project_name }}
+              </h3>
+              <UIcon
+                v-if="project.icon"
+                :name="project.icon"
+                class="h-6 w-6 shrink-0 text-primary"
+              />
+            </div>
 
-          <div
-            v-if="project.technologies"
-            class="mb-6 flex flex-wrap gap-2"
-          >
-            <span
-              v-for="tech in project.technologies"
-              :key="tech"
-              class="rounded border border-primary/20 bg-primary/10 px-2 py-1 text-[13px] leading-[18px] text-primary"
-            >
-              {{ tech }}
-            </span>
-          </div>
+            <p class="mb-6 flex-grow leading-relaxed text-on-surface-variant">
+              {{ project.description }}
+            </p>
 
-          <div class="flex gap-4">
-            <UButton
-              v-if="project.url"
-              :to="project.url"
-              target="_blank"
-              class="flex-1"
+            <div
+              v-if="project.technologies"
+              class="mb-6 flex flex-wrap gap-2"
             >
-              {{ project.is_private ? 'Request Demo' : 'Live' }}
-            </UButton>
+              <span
+                v-for="tech in project.technologies"
+                :key="tech"
+                class="rounded border border-primary/20 bg-primary/10 px-2 py-1 text-[13px] leading-[18px] text-primary"
+              >
+                {{ tech }}
+              </span>
+            </div>
 
-            <UButton
-              v-if="project.github && !project.is_private"
-              :to="project.github"
-              target="_blank"
-              variant="outline"
-              color="neutral"
-              class="flex-1"
-            >
-              View on GitHub
-            </UButton>
+            <div class="flex gap-4">
+              <UButton
+                v-if="project.url"
+                :to="project.url"
+                target="_blank"
+                class="flex-1"
+              >
+                {{ project.is_private ? 'Request Demo' : 'Live' }}
+              </UButton>
+
+              <UButton
+                v-if="project.github && !project.is_private"
+                :to="project.github"
+                target="_blank"
+                variant="outline"
+                color="neutral"
+                class="flex-1"
+              >
+                View on GitHub
+              </UButton>
+            </div>
           </div>
         </div>
       </template>
