@@ -78,8 +78,9 @@ const { data: projects } = await useAsyncData('all-projects', () => {
             <div class="flex gap-4">
               <UButton
                 v-if="project.url"
-                :to="project.url"
+                :href="project.url"
                 target="_blank"
+                rel="noopener noreferrer"
                 class="flex-1"
               >
                 {{ project.is_private ? 'Request Demo' : 'Live' }}
